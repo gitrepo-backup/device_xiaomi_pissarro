@@ -83,7 +83,7 @@ PRODUCT_PACKAGES += \
     init.recovery.mt6877.rc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6877:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6877
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6877:$(TARGET_COPY_OUT_RAMDISK)/first_stage_ramdisk/fstab.mt6877
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 30

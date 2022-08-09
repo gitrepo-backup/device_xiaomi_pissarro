@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/pissarro
+DEVICE_PATH := device/redmi/pissarro
 
 # Build hacks
 BUILD_BROKEN_DUP_RULES := true
@@ -95,7 +95,7 @@ TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mt6877
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/first_stage_ramdisk/fstab.mt6877
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -134,7 +134,7 @@ BUILD_WITHOUT_VENDOR := true
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_ODM := odm
-BOARD_PREBUILT_VENDORIMAGE := device/xiaomi/pissarro/prebuilts/vendor.img
+BOARD_PREBUILT_VENDORIMAGE := $(DEVICE_PATH)/prebuilts/vendor.img
 BOARD_PREBUILT_ODMIMAGE := $(DEVICE_PATH)/prebuilts/odm.img
 
 # VINTF
@@ -142,3 +142,5 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Inherit the proprietary files
 # include vendor/xiaomi/pissarro/BoardConfigVendor.mk
+
+-include vendor/redmi/pissarro-firmware/BoardConfigVendor.mk
